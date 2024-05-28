@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigation/pages/home_page.dart';
+import 'package:navigation/core/routes/route_generator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,8 +28,10 @@ class MyApp extends StatelessWidget {
     //   ),
     // );
 
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      // home: HomePage(),
+      initialRoute: RouteGenerator.getInitialRoute(),
+      onGenerateRoute: RouteGenerator.generate,
     );
   }
 }
