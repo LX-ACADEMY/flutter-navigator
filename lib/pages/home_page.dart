@@ -22,7 +22,9 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 16),
             ElevatedButton(
                 onPressed: () async {
-                  final data = await Navigator.push(
+                  // Navigator.pushReplacement(context, newRoute)
+
+                  final data = await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => SecondPage(
@@ -31,9 +33,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
 
-                  setState(() {
-                    count = data;
-                  });
+                  // setState(() {
+                  //   count = data;
+                  // });
                 },
                 child: const Text('Open Counter')),
           ],
