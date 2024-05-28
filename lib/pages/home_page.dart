@@ -24,9 +24,12 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () async {
                   // Navigator.pushReplacement(context, newRoute)
 
-                  final data = await Navigator.pushReplacement(
+                  final data = await Navigator.push(
                     context,
                     MaterialPageRoute(
+                      settings: const RouteSettings(
+                        name: 'Second',
+                      ),
                       builder: (context) => SecondPage(
                         count: count,
                       ),

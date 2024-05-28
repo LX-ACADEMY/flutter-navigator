@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/thrid_page.dart';
 
 class SecondPage extends StatefulWidget {
   final int count;
@@ -36,28 +37,40 @@ class _SecondPageState extends State<SecondPage> {
         ),
       ),
       body: Center(
-          child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                count--;
-              });
-            },
-            icon: const Icon(Icons.minimize),
-          ),
-          Text('$count'),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                count++;
-              });
-            },
-            icon: const Icon(Icons.add),
-          ),
-        ],
-      )),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  count--;
+                });
+              },
+              icon: const Icon(Icons.minimize),
+            ),
+            Text('$count'),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  count++;
+                });
+              },
+              icon: const Icon(Icons.add),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ThirdPage(),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
