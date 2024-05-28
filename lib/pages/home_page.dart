@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigation/pages/second_page.dart';
+import 'package:navigation/core/routes/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,17 +24,19 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () async {
                   // Navigator.pushReplacement(context, newRoute)
 
-                  final data = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      settings: const RouteSettings(
-                        name: 'Second',
-                      ),
-                      builder: (context) => SecondPage(
-                        count: count,
-                      ),
-                    ),
-                  );
+                  // final data = await Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     settings: const RouteSettings(
+                  //       name: 'Second',
+                  //     ),
+                  //     builder: (context) => SecondPage(
+                  //       count: count,
+                  //     ),
+                  //   ),
+                  // );
+
+                  Navigator.pushNamed(context, Routes.home);
 
                   // setState(() {
                   //   count = data;
